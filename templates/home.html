@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fade Kings Barbershop</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+                <!--Logo-->
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/fade_kings_logo.png') }}" alt="Fade Kings Barbershop Logo">
+        </div>
+        
+            <!-- Services -->
+        <section class="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Haircut – R80</li>
+                <li>Beard Trim – R40</li>
+                <li>Full Package – R150</li>
+            </ul>
+        </section>
+
+            <!-- Booking -->
+        <section>
+            <h2>Book Your Cut</h2>
+            <a href="{{ url_for('book_page') }}"><button>Book Now</button></a>
+            </form>
+        </section>
+
+            <!-- Gallery -->
+        <section>
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="{{ url_for('static', filename='images/image1.jpg') }}" alt="Gallery Image">
+                <img src="{{ url_for('static', filename='images/image2.jpg') }}" alt="Gallery Image">
+                <img src="{{ url_for('static', filename='images/image3.jpg') }}" alt="Gallery Image">
+            </div>
+        </section>
+            <!-- Contact -->
+        <section class="contact">
+            <a href="{{ url_for('contact')}}"><h2>Get in Touch</h2></a>
+            <p>📍 Soweto, Johannesburg</p>
+            <p>📞 072 123 4567</p>
+            <a href="https://wa.me/27721234567" target="_blank">WhatsApp Us</a>
+        </section>
+        <a class="btn" href="{{ url_for('feedback') }}">Feedback</a>
+    </body>
+</html>
+
+
+
 

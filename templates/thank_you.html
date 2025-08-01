@@ -1,0 +1,16 @@
+<!--templates/thank_you.html-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <tittle>Thank You</tittle>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Thank You, {{ name }}!</h1>
+            <p>We appreciate your feedback.</p>
+            <a class="btn" href="{{ url_for('home') }}">Back to Home</a>
+        </div>
+    </body>
+</html>
