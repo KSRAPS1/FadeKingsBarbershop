@@ -1,1 +1,159 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 20px;
+  flex-direction: column;
+}
+
+/* Container for sections */
+.container {
+  width: 100%;
+  max-width: 1200px; /* controls max stretch */
+  margin: 0 auto; /* centers horizontally */
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button, .btn, a.btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+button:hover, .btn:hover {
+  background-color: #333;
+}
+
+/* Inputs and selects */
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Services list */
+.services ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.services li {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Contact section */
+.contact {
+  background-color: #eaeaea;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  body {
+    align-items: stretch;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  h1, h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn, button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .services ul,
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 800px) {
+  body {
+    padding: 10px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .container {
+    margin-top: 20px;
+  }
+}
+
+/* Prevent image overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Link style */
+a {
+  color: green;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Logo styles */
+.logo img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
