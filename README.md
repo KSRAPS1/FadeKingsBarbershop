@@ -25,4 +25,6 @@ Fade Kings Barbershop is a fully responsive, Flask-based website designed for a 
 - **Design Tools**: Logo designed via image generation
 - **Hosting**: Localhost (127.0.0.1:5000)
 
-
+## Admin Login Credentials (for testing purposes)
+Username: admin
+Password: password4567
