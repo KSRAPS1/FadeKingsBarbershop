@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - Fade Kings{% endblock %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>Welcome, {{ username }}!</p>
+<p>Here you can manage the barbershop's operations.</p>
+
+<h3>Bookings</h3>
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Service</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Action</th>
+    </tr>
+    {% for row in bookings %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>
+            <form method="POST" action="{{ url_for('delete_booking') }}">
+                <input type="hidden" name="index" value="{{ loop.index0 }}">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>Feedback</h3>
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Feedback</th>
+        <th>Reply</th>
+        <th>Action</th>
+    </tr>
+    {% for row in feedback %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>
+            <form method="POST" action="{{ url_for('reply_feedback') }}">
+                <input type="hidden" name="email" value="{{ row[1] }}">
+                <input type="text" name="reply" placeholder="Write reply" required>
+                <button type="submit">Send</button>
+            </form>
+        </td>
+        <td>
+            <form method="POST" action="{{ url_for('delete_feedback') }}">
+                <input type="hidden" name="index" value="{{ loop.index0 }}">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

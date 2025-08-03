@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>{% block title %}Fade Kings{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">Fade Kings</div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                <li><a href="{{ url_for('book_page') }}">Book Appointment</a></li>
+                <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+                <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>

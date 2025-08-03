@@ -1,34 +1,29 @@
-<!DOCTYPE Html>
-<html>
-    <head>
-        <tittle>Booking</tittle>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-        <meta charset="UTF-8">
-        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div class="container">
-            <h1>Welcome to Barber Booking</h1>
-            <p>Book your appointment with the best barbers in town.</p>
-            <form action="{{ url_for('submit') }}" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="text" name="phone" placeholder="Your Number" required>
-                <select name="service" required>
-                    <option value="" disabled selected>Select a Service</option>
-                    <option value="haircut">Haircut</option>
-                    <option value="beard">Beard Trim</option>
-                    <option value="full package">Full Package</option>
-                </select>
-                <input type="date" name="date" required>
-                <input type="time" name="time" required>
-                <a href="{{ url_for('confirmation') }}"><button type="submit">Book Now</button></a>
-            </form>
-            <p>Need help? Call us at <a href="tel:0721234567">072 123 4567</a></p>
-            <p>Or WhatsApp us at <a href="https://wa.me/27721234567" target="_blank">WhatsApp</a></p>
-            <a href="{{ url_for('home') }}"><button type="Home">Home Page</button></a>
-            <a href="{{ url_for('contact')}}"><button type="Contact">Contact</button></a>
-            <a class="btn" href="{{ url_for('feedback') }}">Feedback</a>
-        </div>
-    </body>
-</html>
+{# templates/booking.html #}
+{% extends "base.html" %}
+
+{% block title %}Booking - Fade Kings{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to Barber Booking</h1>
+    <p>Book your appointment with the best barbers in town.</p>
+    <form action="{{ url_for('submit') }}" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="phone" placeholder="Your Number" required>
+        <select name="service" required>
+            <option value="" disabled selected>Select a Service</option>
+            <option value="haircut">Haircut</option>
+            <option value="beard">Beard Trim</option>
+            <option value="full package">Full Package</option>
+        </select>
+        <input type="date" name="date" required>
+        <input type="time" name="time" required>
+        <button type="submit">Book Now</button>
+    </form>
+    <p>Need help? Call us at <a href="tel:0721234567">072 123 4567</a></p>
+    <p>Or WhatsApp us at <a href="https://wa.me/27721234567" target="_blank">WhatsApp</a></p>
+    <a href="{{ url_for('home') }}"><button type="button">Home Page</button></a>
+    <a href="{{ url_for('contact') }}"><button type="button">Contact</button></a>
+    <a class="btn" href="{{ url_for('feedback') }}">Feedback</a>
+</div>
+{% endblock %}
