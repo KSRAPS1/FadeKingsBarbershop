@@ -82,16 +82,16 @@ input, select {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  padding: 20px;
+  gap: 16px;
+  padding: 16px;
 }
 
 .gallery img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 12px;
+  display: block;
+  object-fit: contain;
+  border-radius: 10px;
   transition: transform 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
